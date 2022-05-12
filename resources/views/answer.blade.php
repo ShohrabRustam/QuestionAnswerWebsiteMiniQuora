@@ -55,12 +55,10 @@ Answers
                                             <div class="timeline-comment">
 
                                                 <div class="timeline-comment-header">
-                                                    @if(Session::has('user'))
-                                                    <img src="/storage/photo/{{ Session::get('user')['photo'] }}"
+                                                    {{-- <h1>{{ App\Models\User::where('id',$comment->user_id)->first()['photo']  }}</h1> --}}
+                                                    <img src="/storage/photo/{{ App\Models\User::where('id',$comment->user_id)->first()['photo']  }}"
                                                         alt="" />
-                                                    @else
-                                                    <img src="/storage/photo/user.png}}" alt="" />
-                                                    @endif
+
                                                     <p>{{ App\Models\User::where('id',
                                                         $comment->user_id)->first(['name'])->name }}
                                                         <small>commented
